@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kieu Giang Bien – AI Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="brand-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 3.5h8l4 4v8l-4 4H8l-4-4v-8l4-4z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <path d="M9 12h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M12 9v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="9" cy="9" r="1.2" fill="currentColor"/>
+                        <circle cx="15" cy="15" r="1.2" fill="currentColor"/>
+                    </svg>
+                </span>
+                Kieu Giang Bien
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Kieu Giang Bien</h1>
+                <p class="subtitle">Seeking a professional internship in Artificial Intelligence to apply my skills in machine learning, natural language processing, and software development.</p>
+                <p class="subtitle">In the short term, I aim to gain hands-on experience in real-world AI projects. In the long term, I aspire to become an AI engineer or applied researcher, delivering intelligent solutions to practical problems.</p>
+                
+                <a href="#projects" class="cta-button">
+                    <i class="fas fa-rocket"></i>
+                    View Projects
+                </a>
+            </div>
+            <div class="hero-visual">
+                <div class="ai-icon">
+                    <i class="fas fa-atom"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">About</h2>
+            <div class="about-content reveal">
+                <div class="about-text">
+
+                    <h3>Education</h3>
+                    <p><strong>Hanoi University of Science and Technology (HUST)</strong> — Computer Engineering<br>Sep 2023 – Present | Scholarship: Academic Achievement (Excellent, Semester 20242) | CPA: 3.68/4.0</p>
+
+                    <h3>Experience</h3>
+                    <p><strong>Research Lab Member</strong> (ISE Lab, SoICT, HUST) — Oct 2024 – Present</p>
+                    <ul>
+                        <li>Conduct research in ML, DL, and NLP; participate in weekly seminars.</li>
+                        <li>Support onboarding of new lab members.</li>
+                    </ul>
+
+                    <h3>Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item"><i class="fab fa-python"></i><div>Python</div></div>
+                        <div class="skill-item"><i class="fas fa-cogs"></i><div>PyTorch</div></div>
+                        <div class="skill-item"><i class="fas fa-brain"></i><div>TensorFlow</div></div>
+                        <div class="skill-item"><i class="fas fa-language"></i><div>Transformers, spaCy, NLTK</div></div>
+                        <div class="skill-item"><i class="fas fa-database"></i><div>PostgreSQL, MySQL</div></div>
+                        <div class="skill-item"><i class="fab fa-js"></i><div>JavaScript (Node.js)</div></div>
+                        <div class="skill-item"><i class="fab fa-git-alt"></i><div>Git, Jupyter, Colab, Postman</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Projects</h2>
+            <div class="projects-grid reveal">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3>RL4Games: Reinforcement Learning for Games</h3>
+                    </div>
+                    <div class="project-content">
+                        <p>Implemented PPO agents for Flappy Bird, Lunar Lander, Car Racing, and Bipedal Walker. Used curriculum learning, CNN policies for pixel input, and reward shaping to stabilize training and improve performance.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Stable-Baselines3</span>
+                            <span class="project-tag">Gymnasium</span>
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">OpenCV</span>
+                        </div>
+                        <p><a href="https://github.com/BienKieu1411/RL4Games" target="_blank" rel="noopener" class="cta-button" style="margin-top:1rem; padding:0.6rem 1rem;">View on GitHub</a></p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-columns"></i>
+                        </div>
+                        <h3>Kanbask: Kanban Project Management</h3>
+                    </div>
+                    <div class="project-content">
+                        <p>Designed PostgreSQL schema (NeonDB) for scalable task/board management, built secure RESTful APIs with Express.js and JWT auth, added multimedia handling and real-time notifications via Socket.IO, and integrated NLP-powered search.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">Express</span>
+                            <span class="project-tag">PostgreSQL</span>
+                            <span class="project-tag">Socket.IO</span>
+                            <span class="project-tag">JWT</span>
+                            <span class="project-tag">NLP</span>
+                        </div>
+                        <p><a href="https://github.com/chopbong/kanbask" target="_blank" rel="noopener" class="cta-button" style="margin-top:1rem; padding:0.6rem 1rem;">View on GitHub</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Certifications</h2>
+            <ul class="cert-list reveal">
+                <li><i class="fas fa-certificate"></i> <a href="https://coursera.org/share/afd6e82c03add2a209b4c9055fec9885" target="_blank" rel="noopener">Crash Course on Python (Google)</a></li>
+                <li><i class="fas fa-certificate"></i> <a href="https://www.freecodecamp.org/certification/bienkieu/machine-learning-with-python-v7" target="_blank" rel="noopener">Machine Learning with Python (freeCodeCamp)</a></li>
+                <li><i class="fas fa-certificate"></i> <a href="https://www.freecodecamp.org/certification/bienkieu/data-analysis-with-python-v7" target="_blank" rel="noopener">Data Analysis with Python (freeCodeCamp)</a></li>
+                <li><i class="fas fa-certificate"></i> <a href="https://www.freecodecamp.org/certification/bienkieu/scientific-computing-with-python-v7" target="_blank" rel="noopener">Scientific Computing with Python (freeCodeCamp)</a></li>
+                <li><i class="fas fa-certificate"></i> <a href="https://www.kaggle.com/learn/certification/bienkieu/intro-to-game-ai-and-reinforcement-learning" target="_blank" rel="noopener">Intro to Game AI and Reinforcement Learning (Kaggle)</a></li>
+                <li><i class="fas fa-certificate"></i> <a href="https://www.kaggle.com/learn/certification/bienkieu/machine-learning-explainability" target="_blank" rel="noopener">Machine Learning Explainability (Kaggle)</a></li>
+                <li><i class="fas fa-certificate"></i> <a href="https://www.kaggle.com/learn/certification/bienkieu/intro-to-deep-learning" target="_blank" rel="noopener">Intro to Deep Learning (Kaggle)</a></li>
+                <li><i class="fas fa-certificate"></i> <a href="https://www.kaggle.com/learn/certification/bienkieu/computer-vision" target="_blank" rel="noopener">Computer Vision (Kaggle)</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Contact</h2>
+            <div class="contact-content reveal">
+                <p>Let’s connect to discuss AI/ML, NLP, or internship opportunities.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p><a href="mailto:bienkieugiang@gmail.com">bienkieugiang@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <strong>LinkedIn</strong>
+                            <p><a href="https://www.linkedin.com/in/bienkieugiang" target="_blank" rel="noopener">linkedin.com/in/bienkieugiang</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <strong>GitHub</strong>
+                            <p><a href="https://github.com/BienKieu1411" target="_blank" rel="noopener">github.com/BienKieu1411</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/BienKieu1411" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/bienkieugiang" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.kaggle.com/bienkieu" target="_blank" rel="noopener"><i class="fab fa-kaggle"></i></a>
+                <a href="mailto:bienkieugiang@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2025 BienKieu Portfolio.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
