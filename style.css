@@ -12,6 +12,22 @@ body {
     overflow-x: hidden;
 }
 
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: #111827;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    z-index: 2000;
+}
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    outline: 2px solid #8b5cf6;
+}
+
 .bg-animation {
     position: fixed;
     top: 0;
@@ -144,6 +160,26 @@ nav {
     color: #6366f1;
 }
 
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: #c7d2fe;
+}
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -200,6 +236,17 @@ nav {
 .cta-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+}
+
+.cta-button.glow {
+    box-shadow: 0 0 0 rgba(99,102,241,0.6);
+    animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 rgba(99,102,241,0.5); }
+    50% { box-shadow: 0 0 32px rgba(99,102,241,0.55); }
+    100% { box-shadow: 0 0 0 rgba(99,102,241,0.5); }
 }
 
 .hero-visual {
@@ -386,6 +433,11 @@ nav {
     margin-top: 2rem;
 }
 
+.projects-grid .project-card { opacity: 0; transform: translateY(16px); }
+.projects-grid .project-card.revealed { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
+
+/* removed pinned section styles */
+
 .project-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(99, 102, 241, 0.2);
@@ -450,6 +502,32 @@ nav {
     font-size: 0.8rem;
     font-weight: 500;
 }
+
+/* Project header links and repo button */
+.project-title-link {
+    color: #ffffff;
+    text-decoration: none;
+}
+.project-title-link:hover { text-decoration: underline; }
+
+.repo-link {
+    margin-left: auto;
+    color: #e5e7eb;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid rgba(99,102,241,0.35);
+    background: rgba(255,255,255,0.06);
+    transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+.repo-link:hover { background: rgba(99,102,241,0.25); color: #c7d2fe; transform: translateY(-2px); }
+
+/* Make project cards feel clickable */
+.project-card { cursor: pointer; }
 
 /* Certifications */
 .cert-list {
@@ -566,6 +644,18 @@ footer {
     transform: translateY(-3px);
 }
 
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible,
+.cta-button:focus-visible,
+.pinned-card:focus-visible,
+.social-links a:focus-visible,
+.nav-links a:focus-visible {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 3px;
+    border-radius: 8px;
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -606,4 +696,47 @@ footer {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Scroll progress bar */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    z-index: 1200;
+    box-shadow: 0 0 12px rgba(99,102,241,0.6);
+}
+
+#back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(99,102,241,0.35);
+    background: rgba(17,24,39,0.8);
+    color: #e5e7eb;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
+    z-index: 1300;
+}
+
+#back-to-top:hover { background: rgba(99,102,241,0.25); }
+#back-to-top.show { opacity: 1; transform: translateY(0); }
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
 }

@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kieu Giang Bien – AI Portfolio</title>
+    <meta name="description" content="AI/ML portfolio of Kieu Giang Bien: Reinforcement Learning, NLP, full-stack projects, and research interests. Explore projects, certifications, and contact.">
+    <meta property="og:title" content="Kieu Giang Bien – AI Portfolio">
+    <meta property="og:description" content="Reinforcement Learning, NLP, and full-stack projects. View demos, code, and certifications.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bienkieu1411.github.io/Portfolio">
+    <meta name="twitter:card" content="summary_large_image">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
     <div class="bg-animation">
         <div class="floating-shapes">
             <div class="shape"></div>
@@ -40,6 +47,10 @@
         </nav>
     </header>
 
+    <!-- Scroll progress bar -->
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <main id="main">
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-text">
@@ -95,12 +106,38 @@
         <div class="container">
             <h2 class="section-title reveal">Projects</h2>
             <div class="projects-grid reveal">
-                <div class="project-card">
+                <!-- 1) DocBot -->
+                <div class="project-card" data-repo="https://github.com/BienKieu1411/DocBot">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3><a class="project-title-link" href="https://github.com/BienKieu1411/DocBot" target="_blank" rel="noopener">DocBot</a></h3>
+                        <a class="repo-link" href="https://github.com/BienKieu1411/DocBot" target="_blank" rel="noopener" aria-label="Open DocBot repository"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="project-content">
+                        <p>DocBot is a document-aware chat app implementing Retrieval-Augmented Generation (RAG). Users upload PDFs, DOCX, TXT, etc.; the backend extracts text, builds embeddings, retrieves relevant snippets with pgvector, and generates concise answers via Groq—grounded in the sources. Includes authentication, secure cookies, chat sessions, and Supabase storage.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">FastAPI</span>
+                            <span class="project-tag">Supabase</span>
+                            <span class="project-tag">pgvector</span>
+                            <span class="project-tag">RAG</span>
+                            <span class="project-tag">Groq</span>
+                            <span class="project-tag">Embeddings</span>
+                            <span class="project-tag">Node.js</span>
+                        </div>
+                        <p><a href="https://github.com/BienKieu1411/DocBot" target="_blank" rel="noopener" class="cta-button" style="margin-top:1rem; padding:0.6rem 1rem;">View on GitHub</a></p>
+                    </div>
+                </div>
+
+                <!-- 2) RL4Games -->
+                <div class="project-card" data-repo="https://github.com/BienKieu1411/RL4Games">
                     <div class="project-header">
                         <div class="project-icon">
                             <i class="fas fa-gamepad"></i>
                         </div>
-                        <h3>RL4Games: Reinforcement Learning for Games</h3>
+                        <h3><a class="project-title-link" href="https://github.com/BienKieu1411/RL4Games" target="_blank" rel="noopener">RL4Games: Reinforcement Learning for Games</a></h3>
+                        <a class="repo-link" href="https://github.com/BienKieu1411/RL4Games" target="_blank" rel="noopener" aria-label="Open RL4Games repository"><i class="fab fa-github"></i></a>
                     </div>
                     <div class="project-content">
                         <p>Implemented PPO agents for Flappy Bird, Lunar Lander, Car Racing, and Bipedal Walker. Used curriculum learning, CNN policies for pixel input, and reward shaping to stabilize training and improve performance.</p>
@@ -115,12 +152,37 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <!-- 3) CalmMind -->
+                <div class="project-card" data-repo="https://github.com/BienKieu1411/CalmMind">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-heart-pulse"></i>
+                        </div>
+                        <h3><a class="project-title-link" href="https://github.com/BienKieu1411/CalmMind" target="_blank" rel="noopener">CalmMind</a></h3>
+                        <a class="repo-link" href="https://github.com/BienKieu1411/CalmMind" target="_blank" rel="noopener" aria-label="Open CalmMind repository"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="project-content">
+                        <p>CalmMind is an AI-powered mental health platform that detects language, translates when needed, and classifies user text into seven categories with a fine‑tuned BERT model.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">FastAPI</span>
+                            <span class="project-tag">BERT</span>
+                            <span class="project-tag">Hugging Face</span>
+                            <span class="project-tag">Gradio</span>
+                            <span class="project-tag">Groq</span>
+                            <span class="project-tag">NLP</span>
+                        </div>
+                        <p><a href="https://github.com/BienKieu1411/CalmMind" target="_blank" rel="noopener" class="cta-button" style="margin-top:1rem; padding:0.6rem 1rem;">View on GitHub</a></p>
+                    </div>
+                </div>
+
+                <!-- 4) Kanbask -->
+                <div class="project-card" data-repo="https://github.com/chopbong/kanbask">
                     <div class="project-header">
                         <div class="project-icon">
                             <i class="fas fa-columns"></i>
                         </div>
-                        <h3>Kanbask: Kanban Project Management</h3>
+                        <h3><a class="project-title-link" href="https://github.com/chopbong/kanbask" target="_blank" rel="noopener">Kanbask: Kanban Project Management</a></h3>
+                        <a class="repo-link" href="https://github.com/chopbong/kanbask" target="_blank" rel="noopener" aria-label="Open Kanbask repository"><i class="fab fa-github"></i></a>
                     </div>
                     <div class="project-content">
                         <p>Designed PostgreSQL schema (NeonDB) for scalable task/board management, built secure RESTful APIs with Express.js and JWT auth, added multimedia handling and real-time notifications via Socket.IO, and integrated NLP-powered search.</p>
@@ -133,6 +195,52 @@
                             <span class="project-tag">NLP</span>
                         </div>
                         <p><a href="https://github.com/chopbong/kanbask" target="_blank" rel="noopener" class="cta-button" style="margin-top:1rem; padding:0.6rem 1rem;">View on GitHub</a></p>
+                    </div>
+                </div>
+
+                <!-- 5) Project AI 20242 -->
+                <div class="project-card" data-repo="https://github.com/BienKieu1411/Project_AI_20242">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3><a class="project-title-link" href="https://github.com/BienKieu1411/Project_AI_20242" target="_blank" rel="noopener">Project AI 20242</a></h3>
+                        <a class="repo-link" href="https://github.com/BienKieu1411/Project_AI_20242" target="_blank" rel="noopener" aria-label="Open Project AI 20242 repository"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="project-content">
+                        <p>Web-based smart pathfinding app that visualizes classic graph search algorithms (A*, Dijkstra, BFS/DFS, Greedy Best‑First, UCS, IDDFS). Built with Flask backend and a simple HTML/CSS/JS frontend, it supports interactive simulations on custom graphs/maps with admin controls for blocked roads and traffic scenarios.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Flask</span>
+                            <span class="project-tag">Pathfinding</span>
+                            <span class="project-tag">A*</span>
+                            <span class="project-tag">Dijkstra</span>
+                            <span class="project-tag">BFS/DFS</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <p><a href="https://github.com/BienKieu1411/Project_AI_20242" target="_blank" rel="noopener" class="cta-button" style="margin-top:1rem; padding:0.6rem 1rem;">View on GitHub</a></p>
+                    </div>
+                </div>
+
+                <!-- 6) Project OOP 20241 -->
+                <div class="project-card" data-repo="https://github.com/BienKieu1411/Project_OOP_20241">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <h3><a class="project-title-link" href="https://github.com/BienKieu1411/Project_OOP_20241" target="_blank" rel="noopener">Project OOP 20241</a></h3>
+                        <a class="repo-link" href="https://github.com/BienKieu1411/Project_OOP_20241" target="_blank" rel="noopener" aria-label="Open Project OOP 20241 repository"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="project-content">
+                        <p>Java desktop game suite featuring three Vietnamese card games: Tiến Lên Miền Bắc, Ba Cây, và Tiến Lên Miền Nam. Built with JavaFX and OOP design, it provides interactive gameplay, modular rules, and multiple run options via Maven/Gradle.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">JavaFX</span>
+                            <span class="project-tag">OOP</span>
+                            <span class="project-tag">Maven</span>
+                            <span class="project-tag">Gradle</span>
+                            <span class="project-tag">Desktop</span>
+                        </div>
+                        <p><a href="https://github.com/BienKieu1411/Project_OOP_20241" target="_blank" rel="noopener" class="cta-button" style="margin-top:1rem; padding:0.6rem 1rem;">View on GitHub</a></p>
                     </div>
                 </div>
             </div>
@@ -186,6 +294,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer>
         <div class="container">
@@ -198,6 +307,7 @@
             <p>&copy; 2025 BienKieu Portfolio.</p>
         </div>
     </footer>
+    <button id="back-to-top" aria-label="Back to top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="script.js"></script>
 </body>
