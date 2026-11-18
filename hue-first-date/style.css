@@ -1,10 +1,10 @@
 :root {
     color-scheme: light;
-    --paper: #f7f3ed;
-    --ink: #302520;
-    --muted: #665650;
-    --wine: #793942;
-    --line: #d9cec4;
+    --paper: #f6f2f4;
+    --ink: #302834;
+    --muted: #605462;
+    --wine: #6c3d5e;
+    --line: #dbced6;
     --display: Lora, Georgia, serif;
     --body: "Be Vietnam Pro", system-ui, sans-serif;
 }
@@ -37,17 +37,17 @@ button:focus-visible {
     padding: clamp(1.25rem, 3vw, 2.75rem);
 }
 
-.table-photo {
+.evening-photo {
     grid-area: photo;
     position: relative;
     align-self: stretch;
     min-height: clamp(32rem, 46vw, 46rem);
     overflow: hidden;
     border-radius: 3px;
-    background: #473127;
+    background: #342e43;
 }
 
-.table-photo img {
+.evening-photo img {
     position: absolute;
     inset: 0;
     display: block;
@@ -55,7 +55,7 @@ button:focus-visible {
     height: 100%;
     object-fit: cover;
     object-position: 52% 52%;
-    animation: frame-in 820ms cubic-bezier(.22, .7, .24, 1) both;
+    animation: frame-in 1350ms cubic-bezier(.22, .7, .24, 1) both;
 }
 
 .invite-copy {
@@ -91,8 +91,8 @@ h1 {
     font-weight: 600;
 }
 
-.details time { display: inline-flex; align-items: center; gap: 0.75rem; }
-.detail-divider { width: 3px; height: 3px; border-radius: 50%; background: currentColor; }
+.details time { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.1rem 0.8rem; }
+.details time span:last-child { white-space: nowrap; }
 
 .message {
     margin-bottom: 0.45rem;
@@ -126,7 +126,7 @@ h1 {
 }
 
 .primary { background: var(--wine); color: white; }
-.primary:hover { background: #622c34; }
+.primary:hover { background: #532e48; }
 .reply-options .primary { grid-area: 1 / 1; }
 
 .runaway {
@@ -160,7 +160,7 @@ h1 {
 .share-status:empty { margin: 0; }
 
 @keyframes frame-in {
-    from { opacity: 0.78; transform: scale(1.045); }
+    from { opacity: 0.6; transform: scale(1.08); }
     to { opacity: 1; transform: scale(1); }
 }
 
@@ -173,8 +173,8 @@ h1 {
         padding: 0.85rem;
     }
 
-    .table-photo { min-height: clamp(11.5rem, 46vw, 18rem); }
-    .table-photo img { object-position: 52% 57%; }
+    .evening-photo { min-height: clamp(11.5rem, 46vw, 18rem); }
+    .evening-photo img { object-position: 52% 57%; }
 
     .invite-copy { padding: 1.8rem clamp(0.55rem, 4vw, 2rem) 0.8rem; }
     h1 { font-size: clamp(3.35rem, 12vw, 5.1rem); }
@@ -182,7 +182,7 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .table-photo img { animation: none; }
+    .evening-photo img { animation: none; }
     .reply-options { grid-template-rows: auto; }
     .runaway { display: none; }
 }

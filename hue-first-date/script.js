@@ -7,7 +7,7 @@ const backButton = document.querySelector('#reply-again');
 const shareStatus = document.querySelector('#share-status');
 
 const positions = ['top-right', 'bottom-right', 'bottom-left'];
-const replyText = 'Anh ơi, em đi nhé. 7h15 tối thứ Năm (19/11).';
+const replyText = 'Anh ơi, em nhận lời nhé. Hẹn anh 7h15 tối, thứ Năm 19/11/2026.';
 let position = 0;
 
 const dodge = () => {
