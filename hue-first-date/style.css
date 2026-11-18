@@ -274,6 +274,17 @@ button:focus-visible {
     white-space: nowrap;
 }
 
+.schedule-link {
+    display: inline-block;
+    margin-top: 1.05rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+    text-decoration-color: rgb(243 185 187 / 45%);
+    text-underline-offset: 0.28em;
+}
+
+.schedule-link:hover { color: var(--rose); }
+
 .reply-options {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
