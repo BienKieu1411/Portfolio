@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#dae5f0">
+    <meta name="theme-color" content="#f7f3ed">
     <meta name="description" content="Huệ ơi, tối thứ Năm đi ăn với anh không?">
     <meta property="og:title" content="Huệ ơi">
     <meta property="og:description" content="Tối thứ Năm đi ăn với anh không?">
@@ -12,22 +12,22 @@
     <title>Huệ ơi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&family=Patrick+Hand&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=note">
-    <script src="script.js?v=note" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Lora:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=dinner">
+    <script src="script.js?v=dinner" defer></script>
 </head>
 <body>
-    <main class="note">
-        <button class="paper cover" id="open-letter" type="button" aria-controls="invitation" hidden>
-            <span class="cover-title">Huệ ơi</span>
-            <span class="open-label">Mở ra xem</span>
-        </button>
+    <main class="invitation" aria-labelledby="invitation-title">
+        <div class="table-photo">
+            <img src="dinner-for-two.jpg" alt="" fetchpriority="high">
+        </div>
 
-        <article class="paper letter" id="invitation" aria-labelledby="invitation-title">
-            <h1 id="invitation-title" tabindex="-1">Huệ ơi,</h1>
+        <article class="invite-copy">
+            <h1 id="invitation-title">Huệ ơi,</h1>
             <p class="question">Tối thứ Năm đi ăn với anh không?</p>
-            <p class="when"><time datetime="2026-11-19T19:15:00+07:00">7h15 tối, 19/11/2026</time></p>
-            <p>Em thích ăn gì thì nhắn anh nhé.</p>
+
+            <p class="details"><time datetime="2026-11-19T19:15:00+07:00">19/11/2026 <span class="detail-divider" aria-hidden="true"></span> 7h15 tối</time></p>
+            <p class="message">Em thích ăn gì thì nhắn anh nhé.</p>
             <p class="signature">Biên</p>
 
             <div class="reply-options" id="reply-options" hidden>
@@ -36,7 +36,7 @@
             </div>
 
             <div class="reply-result" id="reply-result" hidden>
-                <p class="reply-message">Ok, vậy tối thứ Năm nhé.</p>
+                <p class="reply-message">Vậy tối thứ Năm nhé.</p>
                 <button class="primary" id="share-reply" type="button">Chia sẻ câu trả lời</button>
                 <button class="back" id="reply-again" type="button">Quay lại</button>
                 <p class="share-status" id="share-status" role="status"></p>

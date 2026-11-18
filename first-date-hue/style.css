@@ -1,11 +1,11 @@
 :root {
     color-scheme: light;
-    --desk: #dae5f0;
-    --paper: #fdfefc;
-    --ink: #223955;
-    --blue: #315987;
-    --rule: #dbe6f1;
-    --hand: "Patrick Hand", "Noteworthy", cursive;
+    --paper: #f7f3ed;
+    --ink: #302520;
+    --muted: #665650;
+    --wine: #793942;
+    --line: #d9cec4;
+    --display: Lora, Georgia, serif;
     --body: "Be Vietnam Pro", system-ui, sans-serif;
 }
 
@@ -13,162 +13,127 @@
 [hidden] { display: none !important; }
 
 body {
-    display: grid;
     min-height: 100vh;
-    min-height: 100svh;
     margin: 0;
-    padding: clamp(1rem, 5vw, 3.5rem);
-    place-items: center;
-    background: var(--desk);
+    background: var(--paper);
     color: var(--ink);
-    font-family: var(--body);
-    line-height: 1.65;
+    font: 400 1rem/1.65 var(--body);
 }
 
 button { font: inherit; cursor: pointer; }
 button:focus-visible {
-    outline: 2px solid var(--blue);
+    outline: 2px solid var(--wine);
     outline-offset: 4px;
 }
 
-.note {
+.invitation {
     display: grid;
-    width: min(100%, 34rem);
-    perspective: 1100px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    grid-template-areas: "copy photo";
+    align-items: center;
+    min-height: 100svh;
+    max-width: 94rem;
+    margin: auto;
+    padding: clamp(1.25rem, 3vw, 2.75rem);
 }
 
-.paper {
-    grid-area: 1 / 1;
+.table-photo {
+    grid-area: photo;
     position: relative;
-    border: 1px solid #c5d4e3;
-    border-radius: 3px 3px 9px 4px;
-    background: var(--paper);
-    box-shadow: 4px 5px 0 #becddd, 10px 16px 28px rgb(42 68 100 / 13%);
+    align-self: stretch;
+    min-height: clamp(32rem, 46vw, 46rem);
+    overflow: hidden;
+    border-radius: 3px;
+    background: #473127;
 }
 
-.cover {
-    z-index: 1;
-    display: grid;
-    min-height: clamp(16rem, 65vw, 22rem);
-    padding: 2rem 1.25rem;
-    place-content: center;
-    justify-items: center;
-    gap: 1rem;
-    color: var(--ink);
-    transform-origin: center top;
-    backface-visibility: hidden;
-}
-
-.cover::after {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 1.6rem;
-    aspect-ratio: 1;
-    border-radius: 4px 0 8px 0;
-    background: linear-gradient(135deg, var(--rule) 50%, var(--desk) 50%);
-    content: "";
-}
-
-.cover-title,
-.letter h1,
-.signature {
-    font-family: var(--hand);
-    font-weight: 400;
-}
-
-.cover-title {
-    font-size: clamp(3.8rem, 15vw, 6.2rem);
-    line-height: 1;
-    transform: rotate(-5deg);
-}
-
-.open-label {
-    border-bottom: 1px solid #aebfd3;
-    color: var(--blue);
-    font-size: 0.825rem;
-}
-
-.cover:hover .open-label { border-color: var(--blue); }
-.cover.is-opening {
+.table-photo img {
     position: absolute;
     inset: 0;
-    pointer-events: none;
-    animation: unfold 440ms cubic-bezier(.22,.7,.22,1) both;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 52% 52%;
+    animation: frame-in 820ms cubic-bezier(.22, .7, .24, 1) both;
 }
 
-.letter {
-    min-width: 0;
-    padding: clamp(1.6rem, 6.8vw, 3rem);
-    background-image: repeating-linear-gradient(transparent 0 27px, rgb(219 230 241 / 67%) 27px 28px);
-    background-position: 0 1rem;
+.invite-copy {
+    grid-area: copy;
+    width: min(100%, 40rem);
+    justify-self: center;
+    padding: 2.5rem clamp(1.5rem, 5.4vw, 5.25rem);
 }
 
-.letter.is-revealed { animation: reveal 330ms 100ms ease both; }
+.invite-copy p { margin-top: 0; }
 
-.letter h1 {
-    margin: 0 0 0.6rem;
-    font-size: clamp(2.95rem, 11vw, 4.5rem);
-    line-height: 1;
+h1 {
+    margin: 0 0 0.5rem;
+    color: var(--wine);
+    font: 500 clamp(3.75rem, 6.4vw, 6.7rem)/1.03 var(--display);
+    letter-spacing: -0.065em;
 }
 
-.letter p { margin: 0 0 0.48rem; }
-.letter .question {
-    margin-bottom: 0.6rem;
-    font-size: clamp(1.1rem, 4.6vw, 1.55rem);
+.question {
+    max-width: 15ch;
+    margin-bottom: 1.9rem;
+    font: 500 clamp(1.95rem, 3.1vw, 3.1rem)/1.2 var(--display);
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+}
+
+.details {
+    margin-bottom: 1rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--line);
+    color: var(--wine);
+    font-size: 0.85rem;
     font-weight: 600;
-    line-height: 1.45;
 }
 
-.when {
-    width: fit-content;
-    padding: 0 0.18em;
-    background: linear-gradient(transparent 61%, #dceaff 61% 94%, transparent 94%);
-    font-weight: 600;
+.details time { display: inline-flex; align-items: center; gap: 0.75rem; }
+.detail-divider { width: 3px; height: 3px; border-radius: 50%; background: currentColor; }
+
+.message {
+    margin-bottom: 0.45rem;
+    color: var(--muted);
+    font-size: 0.94rem;
 }
 
-.letter .signature {
-    margin: 0.6rem 0 0;
-    color: var(--blue);
-    font-size: 1.85rem;
-    line-height: 1.2;
-    transform: rotate(-5deg);
-    transform-origin: left;
-}
+.signature { margin-bottom: 0; font: 500 1.25rem/1.5 var(--display); }
 
 .reply-options {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: repeat(2, minmax(2.75rem, auto));
-    align-items: stretch;
-    gap: 0.6rem;
-    max-width: 22rem;
-    margin-top: 1.15rem;
+    gap: 0.55rem 0.7rem;
+    width: min(100%, 17rem);
+    margin-top: 1.3rem;
 }
 
 .primary,
 .runaway {
     display: inline-grid;
     min-height: 2.75rem;
-    padding: 0.5rem 0.62rem;
+    padding: 0.63rem 0.8rem;
     place-items: center;
-    border: 1px solid var(--blue);
-    border-radius: 6px;
+    border: 1px solid var(--wine);
+    border-radius: 3px;
     font-size: 0.82rem;
     font-weight: 600;
-    line-height: 1.4;
+    line-height: 1.35;
     text-align: center;
 }
 
-.primary { background: var(--blue); color: white; }
-.primary:hover { background: var(--ink); }
+.primary { background: var(--wine); color: white; }
+.primary:hover { background: #622c34; }
 .reply-options .primary { grid-area: 1 / 1; }
 
 .runaway {
     grid-area: 1 / 2;
-    border-color: #aabfd4;
+    border-color: var(--line);
     background: var(--paper);
-    color: var(--blue);
+    color: var(--wine);
     cursor: pointer;
     user-select: none;
     touch-action: manipulation;
@@ -177,40 +142,47 @@ button:focus-visible {
 .runaway[data-position="bottom-right"] { grid-area: 2 / 2; }
 .runaway[data-position="bottom-left"] { grid-area: 2 / 1; }
 
-.reply-result { margin-top: 1.15rem; }
-.letter .reply-message { margin-bottom: 0.65rem; }
+.reply-result { margin-top: 1.3rem; }
+.reply-message { margin-bottom: 0.6rem; font-weight: 500; }
+
 .back {
     min-height: 2.75rem;
-    padding-inline: 0.65rem;
+    padding-inline: 0.7rem;
     border: 0;
     background: transparent;
-    color: var(--blue);
+    color: var(--wine);
     font-size: 0.82rem;
     text-decoration: underline;
     text-underline-offset: 0.2em;
 }
 
-.letter .share-status {
-    margin: 0.5rem 0 0;
-    color: var(--blue);
-    font-size: 0.82rem;
-}
-
+.share-status { margin-bottom: 0; margin-top: 0.5rem; color: var(--muted); font-size: 0.82rem; }
 .share-status:empty { margin: 0; }
 
-@keyframes unfold {
-    from { opacity: 1; transform: rotateX(0); }
-    to { opacity: 0; transform: rotateX(105deg); }
+@keyframes frame-in {
+    from { opacity: 0.78; transform: scale(1.045); }
+    to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes reveal {
-    from { opacity: 0; transform: translateY(0.5rem); }
-    to { opacity: 1; transform: translateY(0); }
+@media (max-width: 760px) {
+    .invitation {
+        max-width: 37rem;
+        min-height: auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: "photo" "copy";
+        padding: 0.85rem;
+    }
+
+    .table-photo { min-height: clamp(11.5rem, 46vw, 18rem); }
+    .table-photo img { object-position: 52% 57%; }
+
+    .invite-copy { padding: 1.8rem clamp(0.55rem, 4vw, 2rem) 0.8rem; }
+    h1 { font-size: clamp(3.35rem, 12vw, 5.1rem); }
+    .question { margin-bottom: 1.2rem; font-size: clamp(1.8rem, 7vw, 2.65rem); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .cover.is-opening { display: none; }
-    .letter.is-revealed { animation: none; }
+    .table-photo img { animation: none; }
     .reply-options { grid-template-rows: auto; }
     .runaway { display: none; }
 }
