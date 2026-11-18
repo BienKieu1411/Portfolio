@@ -125,13 +125,17 @@ h1 em { color: var(--rose-light); font-weight: 500; }
 .invitation-details strong { color: #563b43; font-size: 0.73rem; font-weight: 600; line-height: 1.5; }
 .invitation-details strong small { color: #896d6b; font-size: 0.62rem; font-weight: 400; }
 .invitation-details > i { width: 1px; height: 32px; background: rgb(86 59 67 / 18%); }
-.reply-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-top: 1.15rem; }
+.reply-options { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-top: 1.15rem; }
+.reply-options.is-dodging { min-height: 146px; }
 .reply-button, .share-button { min-height: 46px; border-radius: 3px 13px 3px 13px; cursor: pointer; font-size: 0.76rem; font-weight: 600; transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease; }
 .reply-button:hover, .share-button:hover { transform: translateY(-2px); }
 .reply-yes { border: 1px solid #9a596a; background: #9a596a; color: white; }
 .reply-yes:hover { background: #804858; box-shadow: 0 8px 18px rgb(128 72 88 / 20%); }
 .reply-later { border: 1px solid rgb(86 59 67 / 23%); background: transparent; color: #765e60; }
 .reply-later:hover { background: rgb(86 59 67 / 5%); }
+.reply-options.is-dodging .reply-later { position: absolute; z-index: 2; width: calc(50% - 0.325rem); margin: 0; transition: top 180ms ease, left 180ms ease, background 180ms ease; }
+.dodge-note { margin: 0.55rem 0 -0.45rem; color: #e5b2a7; font-family: var(--font-display); font-size: 1.02rem; font-style: italic; text-align: center; }
+.dodge-note[hidden] { display: none; }
 .reply-result { padding-top: 1.2rem; text-align: center; }
 .reply-result[hidden] { display: none; }
 .result-sparkle { display: block; margin-bottom: 0.2rem; color: #bc7880; font-size: 1.2rem; }
@@ -204,6 +208,7 @@ h1 em { color: var(--rose-light); font-weight: 500; }
     .invitation-details strong { font-size: 0.66rem; }
     .invitation-details strong small { font-size: 0.57rem; }
     .reply-options { grid-template-columns: 1fr; gap: 0.55rem; }
+    .reply-options.is-dodging .reply-later { width: 100%; }
     .reply-button { min-height: 44px; }
     .footer { align-items: flex-start; flex-wrap: wrap; gap: 0.35rem 1rem; padding-block: 0.85rem; font-size: 0.82rem; }
 }
@@ -218,4 +223,5 @@ h1 em { color: var(--rose-light); font-weight: 500; }
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
     .orbit, .petal { animation: none !important; }
+    .reply-options.is-dodging .reply-later { transition: none; }
 }
