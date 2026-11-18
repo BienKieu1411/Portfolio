@@ -13,13 +13,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Lora:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=animated-card">
     <script src="script.js" defer></script>
+    <script src="motion.js" defer></script>
 </head>
 <body>
     <main class="invitation" aria-labelledby="invitation-title">
         <div class="evening-photo">
             <img src="blue-hour.jpg" alt="" fetchpriority="high">
+            <div class="motion-scene" id="motion-scene" aria-hidden="true" hidden>
+                <div class="animated-envelope">
+                    <div class="envelope-back"></div>
+                    <div class="animated-card">
+                        <span>Gửi Huệ</span>
+                        <time datetime="2026-11-19">19.11.2026</time>
+                    </div>
+                    <div class="envelope-pocket"></div>
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-seal">♡</div>
+                </div>
+            </div>
+            <button class="replay-motion" id="replay-motion" type="button" hidden>Xem lại hiệu ứng</button>
         </div>
 
         <article class="invite-copy">
