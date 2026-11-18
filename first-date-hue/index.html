@@ -3,119 +3,45 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#2b1d29">
-    <meta name="description" content="Một lời mời thật dịu dàng dành riêng cho Huệ. Thứ Năm, ngày 19 tháng 11 năm 2026.">
-    <meta property="og:title" content="Huệ ơi, mình hẹn nhau nhé?">
-    <meta property="og:description" content="Một lá thư nhỏ và một lời mời first date dành riêng cho Huệ.">
+    <meta name="theme-color" content="#dae5f0">
+    <meta name="description" content="Huệ ơi, tối thứ Năm đi ăn với anh không?">
+    <meta property="og:title" content="Huệ ơi">
+    <meta property="og:description" content="Tối thứ Năm đi ăn với anh không?">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bienkieu1411.github.io/Portfolio/first-date-hue/">
-    <title>Huệ ơi, mình hẹn nhau nhé? · 19.11.2026</title>
+    <title>Huệ ơi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=note">
+    <script src="script.js?v=note" defer></script>
 </head>
 <body>
-    <div class="ambient" aria-hidden="true">
-        <span class="glow glow-one"></span>
-        <span class="glow glow-two"></span>
-        <span class="orbit orbit-one">✦</span>
-        <span class="orbit orbit-two">✧</span>
-        <span class="orbit orbit-three">·</span>
-        <span class="petal petal-one">✿</span>
-        <span class="petal petal-two">✧</span>
-    </div>
+    <main class="note">
+        <button class="paper cover" id="open-letter" type="button" aria-controls="invitation" hidden>
+            <span class="cover-title">Huệ ơi</span>
+            <span class="open-label">Mở ra xem</span>
+        </button>
 
-    <div class="page-shell">
-        <header class="topbar">
-            <a class="wordmark" href="#home" aria-label="Lời mời dành cho Huệ, đầu trang">
-                <svg viewBox="0 0 36 36" aria-hidden="true">
-                    <path d="M18 30S5 22 5 13a7 7 0 0 1 13-3 7 7 0 0 1 13 3c0 9-13 17-13 17Z" />
-                    <path d="M11 18h4l2-4 3 8 2-4h4" />
-                </svg>
-                <span>một lá thư nhỏ</span>
-            </a>
-            <span class="topbar-date">19 NOV · 2026</span>
-        </header>
+        <article class="paper letter" id="invitation" aria-labelledby="invitation-title">
+            <h1 id="invitation-title" tabindex="-1">Huệ ơi,</h1>
+            <p class="question">Tối thứ Năm đi ăn với anh không?</p>
+            <p class="when"><time datetime="2026-11-19T19:15:00+07:00">7h15 tối, 19/11/2026</time></p>
+            <p>Em thích ăn gì thì nhắn anh nhé.</p>
+            <p class="signature">Biên</p>
 
-        <main class="main-layout" id="home">
-            <section class="intro" aria-labelledby="page-title">
-                <p class="eyebrow"><span class="eyebrow-flower" aria-hidden="true">✿</span> Gửi Huệ, từ một người đang hơi hồi hộp</p>
-                <h1 id="page-title">Huệ ơi,<br>mình <em>hẹn nhau</em><br>nhé?</h1>
-                <p class="intro-copy">Mình muốn có một buổi tối thật dịu dàng bên Huệ — ăn một món ngon, kể nhau nghe vài chuyện nhỏ, rồi xem hai đứa có thể cười cùng nhau bao lâu.</p>
+            <div class="reply-options" id="reply-options" hidden>
+                <button class="primary" id="reply-yes" type="button">Đi chứ</button>
+                <span class="runaway" id="reply-later" aria-hidden="true">Hôm khác</span>
+            </div>
 
-                <div class="date-note" aria-label="Thời gian dự định">
-                    <span class="date-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="15" rx="2"/><path d="M7.5 3.5v4M16.5 3.5v4M4 10h16M8 14h2m4 0h2m-8 3h2"/></svg>
-                    </span>
-                    <span><span class="date-label">Thứ Năm · 19 tháng 11, 2026</span><strong>19:15 <small>· giờ Việt Nam</small></strong></span>
-                </div>
-                <p class="place-note"><span aria-hidden="true">♡</span> Địa điểm, mình cùng chọn nhé.</p>
-                <p class="soft-signoff">Không cần câu trả lời nào ngoài điều Huệ thật lòng muốn. 🌷</p>
-            </section>
-
-            <section class="letter-stage" id="letter-stage" aria-label="Lá thư mời dành cho Huệ">
-                <div class="envelope-wrap">
-                    <div class="envelope-shadow" aria-hidden="true"></div>
-                    <div class="letter-peek" aria-hidden="true">
-                        <span>for Huệ</span>
-                        <svg viewBox="0 0 32 32"><path d="M16 27S4 20 4 12a6.5 6.5 0 0 1 12-3 6.5 6.5 0 0 1 12 3c0 8-12 15-12 15Z"/></svg>
-                    </div>
-                    <div class="envelope" aria-hidden="true">
-                        <div class="envelope-back"></div>
-                        <div class="envelope-front"></div>
-                        <div class="envelope-flap"></div>
-                        <span class="wax-seal">♡</span>
-                    </div>
-                    <button class="open-letter" id="open-letter" type="button" aria-controls="invitation">
-                        <span class="open-letter-label">Mở thiệp nhé</span>
-                        <span class="open-letter-arrow" aria-hidden="true">↓</span>
-                    </button>
-                </div>
-
-                <article class="invitation" id="invitation" aria-labelledby="invitation-title" hidden>
-                    <div class="invitation-rule"><span>THƯ MỜI HẸN HÒ ĐẦU TIÊN</span><span aria-hidden="true">♡</span></div>
-                    <p class="letter-greeting">Huệ thân mến,</p>
-                    <h2 id="invitation-title" tabindex="-1">Huệ có muốn<br>đi first date<br>cùng mình không?</h2>
-                    <p class="letter-copy">Mình đã chọn một buổi tối tháng Mười Một. Nếu Huệ cũng muốn, mình sẽ cùng chọn một nơi thật xinh — rồi cứ để buổi hẹn diễn ra thật tự nhiên nhé.</p>
-
-                    <div class="invitation-details">
-                        <div><span>NGÀY</span><strong>Thứ Năm<br>19.11.2026</strong></div>
-                        <i aria-hidden="true"></i>
-                        <div><span>GIỜ</span><strong>19:15<br><small>giờ Việt Nam</small></strong></div>
-                        <i aria-hidden="true"></i>
-                        <div><span>ĐỊA ĐIỂM</span><strong>Cùng chọn nhé</strong></div>
-                    </div>
-
-                    <div class="reply-options" id="reply-options">
-                        <button class="reply-button reply-yes" id="reply-yes" type="button">Mình đồng ý 🌷</button>
-                        <button class="reply-button reply-later" id="reply-later" type="button">Mình chọn hôm khác</button>
-                    </div>
-                    <p class="dodge-note" id="dodge-note" role="status" hidden></p>
-
-                    <div class="reply-result" id="reply-result" aria-live="polite" hidden>
-                        <span class="result-sparkle" aria-hidden="true">✦</span>
-                        <p class="result-message" id="result-message"></p>
-                        <button class="share-button" id="share-reply" type="button">Chia sẻ lời hồi âm <span aria-hidden="true">↗</span></button>
-                        <button class="reply-again" id="reply-again" type="button">Chọn lại câu trả lời</button>
-                        <p class="share-note" id="share-note">Trang không tự gửi hay lưu câu trả lời. Huệ có thể chạm nút để gửi lời nhắn cho người mời.</p>
-                        <p class="share-status" id="share-status" role="status"></p>
-                    </div>
-
-                    <p class="letter-footer">dành riêng cho Huệ <span aria-hidden="true">✿</span></p>
-                </article>
-
-                <p class="envelope-hint" id="envelope-hint">Một chiếc phong bì, một lời mời chân thành</p>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <span>Được gửi đi bằng một chút hồi hộp <span aria-hidden="true">♡</span></span>
-            <span>HUỆ · 19:15 · THỨ NĂM</span>
-        </footer>
-    </div>
-
-    <noscript><p class="no-script">Huệ ơi, thư mời là tối Thứ Năm, 19/11/2026 lúc 19:15. Địa điểm mình cùng chọn nhé. 💌</p></noscript>
+            <div class="reply-result" id="reply-result" hidden>
+                <p class="reply-message">Ok, vậy tối thứ Năm nhé.</p>
+                <button class="primary" id="share-reply" type="button">Chia sẻ câu trả lời</button>
+                <button class="back" id="reply-again" type="button">Quay lại</button>
+                <p class="share-status" id="share-status" role="status"></p>
+            </div>
+        </article>
+    </main>
 </body>
 </html>
