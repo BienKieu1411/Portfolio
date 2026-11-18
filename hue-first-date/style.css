@@ -314,10 +314,10 @@ button:focus-visible {
 .runaway[data-position="bottom-left"] { grid-area: 2 / 1; }
 
 .reply-result { margin-top: 1.25rem; }
-.reply-message { margin: 0 0 0.6rem; font-weight: 500; }
+.reply-message { max-width: 43ch; margin: 0 0 0.35rem; font-weight: 500; }
 .back {
     min-height: 2.75rem;
-    padding-inline: 0.7rem;
+    padding-inline: 0;
     border: 0;
     background: transparent;
     color: var(--rose);
@@ -325,9 +325,6 @@ button:focus-visible {
     text-decoration: underline;
     text-underline-offset: 0.2em;
 }
-
-.share-status { margin: 0.5rem 0 0; color: var(--muted); font-size: 0.82rem; }
-.share-status:empty { margin: 0; }
 
 @media (prefers-reduced-motion: no-preference) {
     .invite-copy h1, .question, .letter-copy, .details {
