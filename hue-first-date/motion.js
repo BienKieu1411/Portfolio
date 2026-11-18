@@ -1,10 +1,11 @@
 (() => {
     const scene = document.querySelector('#motion-scene');
-    const photo = document.querySelector('.evening-photo img');
+    const panel = document.querySelector('.evening-photo');
+    const photo = panel?.querySelector('img');
     if (!scene || !photo) return;
 
     const start = () => {
-        scene.classList.add('is-playing');
+        panel.classList.add('is-playing');
         scene.hidden = false;
     };
 

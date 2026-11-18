@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f6f2f4">
+    <meta name="theme-color" content="#221924">
     <meta name="description" content="Lời mời first date dành cho Huệ. 7h15 tối, thứ Năm 19/11/2026.">
     <meta property="og:title" content="Huệ ơi, anh hẹn em tối thứ Năm nhé?">
     <meta property="og:description" content="7h15 tối, thứ Năm 19/11/2026.">
@@ -13,20 +13,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Lora:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=letter">
+    <link rel="stylesheet" href="style.css?v=twilight">
     <script src="script.js?v=letter" defer></script>
-    <script src="motion.js?v=letter" defer></script>
+    <script src="motion.js?v=twilight" defer></script>
 </head>
 <body>
     <main class="invitation" aria-labelledby="invitation-title">
         <div class="evening-photo">
             <img src="blue-hour.jpg" alt="" fetchpriority="high">
             <div class="motion-scene" id="motion-scene" aria-hidden="true" hidden>
+                <div class="scene-light"></div>
+                <div class="glints">
+                    <i></i><i></i><i></i><i></i><i></i>
+                </div>
                 <div class="animated-envelope">
                     <div class="envelope-back"></div>
                     <div class="animated-card">
-                        <span>First date</span>
-                        <time datetime="2026-11-19">19.11.2026</time>
+                        <span>Gửi Huệ</span>
+                        <time datetime="2026-11-19T19:15:00+07:00">19.11.2026</time>
                     </div>
                     <div class="envelope-pocket"></div>
                     <div class="envelope-flap"></div>
@@ -38,9 +42,14 @@
         <article class="invite-copy">
             <h1 id="invitation-title">Huệ ơi,</h1>
             <p class="question">Anh hẹn em tối thứ Năm nhé?</p>
+            <p class="letter-copy">Anh định nhắn em một câu thôi, mà cuối cùng lại làm cái thiệp này. Lần đầu hẹn em nên anh hơi hồi hộp. Anh muốn gặp em và có một buổi tối để hai đứa nói chuyện lâu hơn một chút.</p>
 
-            <p class="details"><time datetime="2026-11-19T19:15:00+07:00"><span>Thứ Năm, 19/11/2026</span> <span>7h15 tối</span></time></p>
-            <p class="signature">Biên</p>
+            <div class="details">
+                <time datetime="2026-11-19T19:15:00+07:00">
+                    <span class="event-day"><span>Thứ Năm</span><strong>19/11/2026</strong></span>
+                    <span class="event-hour">7h15 tối</span>
+                </time>
+            </div>
 
             <div class="reply-options" id="reply-options" hidden>
                 <button class="primary" id="reply-yes" type="button">Đi chứ</button>
